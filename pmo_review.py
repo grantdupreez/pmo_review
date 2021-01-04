@@ -5,7 +5,7 @@ import io
 st.write("**Upload project plans for review**")
 st.write("Use csv files")
 
-uploaded_files = st.sidebar.file_uploader("Choose CSV files",type='csv',accept_multiple_files=True)
+uploaded_files = st.sidebar.file_uploader("Choose CSV files", accept_multiple_files=True)
 if uploaded_files:
     for file in uploaded_files:
         file.seek(0)
