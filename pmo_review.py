@@ -9,15 +9,18 @@ st.write("Use the template csv file")
 
 uploaded_file = st.sidebar.file_uploader("Choose a file",type=['CSV'], accept_multiple_files=True)
 if uploaded_file is not None:
-    df = pd.read_csv(uploaded_file, header=[0], encoding='latin1')
+    for file in multiple_files:
+        df = pd.read_csv(file, header=[0], encoding='latin1')
+        file.seek(0)
+        st.write(df)
     
-    df['Start'] = df['Start'].astype('datetime64')
-    df['Finish'] = df['Finish'].astype('datetime64')
-    df['CR'] = df['CR'].astype(str)
+        df['Start'] = df['Start'].astype('datetime64')
+        df['Finish'] = df['Finish'].astype('datetime64')
+        df['CR'] = df['CR'].astype(str)
     
-    orders = list(df['CR'])
+        orders = list(df['CR'])
     
-    st.write(df)
+        st.write(df)
     
 
 #    fig = px.timeline(df
