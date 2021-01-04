@@ -1,15 +1,34 @@
 import streamlit as st
 import pandas as pd
-import io
+import numpy as np
+import plotly.express as px
+import plotly.graph_objs as go
 
-st.write("**Upload project plans for review**")
-st.write("Use csv files")
-	
+st.write("**Upload project plan for a Gantt chart view**")
+st.write("Use the template csv file")
 
-uploaded_files = st.sidebar.file_uploader("Choose CSV files", type='csv')
-if uploaded_files:
-#    for file in uploaded_files:
-#        file.seek(0)
-	uploaded_data_read = [pd.read_csv(file) for file in uploaded_files]
-	raw_data = pd.concat(uploaded_data_read)
-	st.write(raw_data)
+uploaded_file = st.sidebar.file_uploader("Choose a file",type=['CSV'])
+if uploaded_file is not None:
+    df = pd.read_csv(uploaded_file, header=[0], encoding='latin1')
+    
+    df['Start'] = df['Start'].astype('datetime64')
+    df['Finish'] = df['Finish'].astype('datetime64')
+    df['CR'] = df['CR'].astype(str)
+    
+    orders = list(df['CR'])
+    
+    st.write(df)
+    
+
+#    fig = px.timeline(df
+#                      , x_start="Start"
+#                      , x_end="Finish"
+#                      , y="CR"
+#                      , hover_name="CR"
+#                      , color='Status'
+#                      , opacity=.7
+#    )
+    
+#    fig.update_yaxes(autorange="reversed")     
+    
+#    fig
