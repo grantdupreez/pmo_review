@@ -1,9 +1,10 @@
 import streamlit as st
 import os
 
-filename = st.text_input('Enter a file path:')
-try:
-    with open(filename) as input:
-        st.text(input.read())
-except FileNotFoundError:
-    st.error('File not found.')
+def file_selector(folder_path='.'):
+    filenames = os.listdir(folder_path)
+    selected_filename = st.selectbox('Select a file', filenames)
+    return os.path.join(folder_path, selected_filename)
+
+filename = file_selector()
+st.write('You selected `%s`' % filename)
