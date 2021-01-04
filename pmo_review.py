@@ -1,27 +1,9 @@
 import streamlit as st
-import pandas as pd
-import io
+import os
 
-st.write("**Upload project plans for review**")
-st.write("Use csv files")
-
-uploaded_files = st.sidebar.file_uploader("Choose CSV files", type='csv')
-#for uploaded_file in uploaded_files:
-#    bytes_data = uploaded_file.read()
-#    st.write("filename:", uploaded_file.name)
-#    st.write(bytes_data)
-
-
-
-
-
-
-
-if uploaded_files:
-#    for file in uploaded_files:
-#        file.seek(0)
-    uploaded_data_read = [pd.read_csv(file) for file in uploaded_files]
-    raw_data = pd.concat(uploaded_data_read)
-    
-    st.write(raw_data)
-
+filename = st.text_input('Enter a file path:')
+try:
+    with open(filename) as input:
+        st.text(input.read())
+except FileNotFoundError:
+    st.error('File not found.')
