@@ -7,9 +7,9 @@ import plotly.graph_objs as go
 st.write("**Upload project plan for a Gantt chart view**")
 st.write("Use the template csv file")
 
-uploaded_file = st.sidebar.file_uploader("Choose a file",type=['CSV'], accept_multiple_files=True)
-if uploaded_file is not None:
-    for file in multiple_files:
+uploaded_files = st.sidebar.file_uploader("Choose a file",type=['CSV'], accept_multiple_files=True)
+if uploaded_files is not None:
+    for file in uploaded_files:
         df = pd.read_csv(file, header=[0], encoding='latin1')
         file.seek(0)
         st.write(df)
