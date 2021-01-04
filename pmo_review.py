@@ -14,4 +14,4 @@ if uploaded_files is not None:
         df = pd.read_csv(file, header=[0], encoding='latin1')
 #        concat_df = pd.concat(df)
         
-        st.write(concat_df)
+        st.write(df)
