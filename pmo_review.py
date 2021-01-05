@@ -18,3 +18,6 @@ if uploaded_files is not None:
     merged_df = pd.concat(list_of_dataframes)
     
     st.write(merged_df)
+
+else:
+    static_store.clear()  
