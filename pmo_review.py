@@ -12,7 +12,8 @@ uploaded_files = st.sidebar.file_uploader("Choose a file",type=['CSV'], accept_m
 if uploaded_files is not None:
     for file in uploaded_files:
         file.seek(0)
-        list_of_dataframes.append(pd.read_csv(file, header=[0], encoding='latin1')
+        df = pd.read_csv(file, header=[0], encoding='latin1')
+        list_of_dataframes.append(df)
     
     merged_df = pd.concat(list_of_dataframes)
     
