@@ -14,7 +14,8 @@ if uploaded_files is not None:
         file.seek(0)
         df = pd.read_csv(file, header=[0], encoding='latin1')
         list_of_dataframes.append(df)
-    if len(list_of_dataframes) > 0
+        
+    if list_of_dataframes:
         merged_df = pd.concat(list_of_dataframes)
     
     st.write(merged_df)
