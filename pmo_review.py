@@ -14,7 +14,7 @@ if uploaded_files is not None:
         st.write("going to upload files")
         file.seek(0)
         list_of_dataframes.append(pd.read_csv(file, header=[0], encoding='latin1')
-        st.write("List of dataframes append step")
+#        st.write("List of dataframes append step")
 
 #        df = pd.read_csv(file, header=[0], encoding='latin1')
 #        concat_df = pd.concat(df)
