@@ -17,6 +17,8 @@ if uploaded_files is not None:
     
     if list_of_dataframes:
         merged_df = pd.concat(list_of_dataframes)
+    else: 
+        st.write("No data")
     
     st.write(merged_df)
 
