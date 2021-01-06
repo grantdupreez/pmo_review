@@ -60,7 +60,7 @@ if uploaded_file is not None:
     )
         
     # Create parcats trace
-    color = df.Priority;
+    color = df.RAG;
 #    colorscale = [[P1, 'lightsteelblue'], [P2, 'mediumseagreen'], [P3, 'lightsalmon']]
 
 #    fig = go.Figure(data = [go.Parcats(dimensions=[country_dim, pm_dim, proc_dim, prio_dim, state_dim, rag_dim],
