@@ -19,7 +19,7 @@ s3_string = ""
 st.title("Project deliverable viewer")
 st.write("Use the template csv file")
 
-st.sidebar.title("upload the template")
+st.sidebar.title("Upload the template")
 
 uploaded_file = st.sidebar.file_uploader("Choose a file",type=['CSV'])
 if uploaded_file is not None:
