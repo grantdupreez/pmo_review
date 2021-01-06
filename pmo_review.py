@@ -47,6 +47,14 @@ if uploaded_file is not None:
         values=df.State, label="State"
     )
 
+    country_dim = go.parcats.Dimension(
+        values=df.Impacted_Countries, label="Countries"
+    )
+
+    pm_dim = go.parcats.Dimension(
+        values=df.PM, label="PM"
+    )
+    
     rag_dim = go.parcats.Dimension(
         values=df.RAG, label="RAG"
     )
