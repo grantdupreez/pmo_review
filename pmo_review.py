@@ -23,7 +23,8 @@ st.sidebar.title("Upload the template")
 
 uploaded_file = st.sidebar.file_uploader("Choose a file",type=['CSV'])
 if uploaded_file is not None:
-    df = pd.read_csv(uploaded_file, header=[0], encoding='latin1')
+#    df = pd.read_csv(uploaded_file, header=[0], encoding='latin1')
+    df = pd.read_csv(uploaded_file, header=[0])
     
 #    df['Start'] = pd.to_datetime(df['Start'])
 
