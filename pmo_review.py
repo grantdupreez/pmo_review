@@ -62,6 +62,7 @@ if uploaded_file is not None:
     # Create parcats trace
     color = df.Priority;
 
-    fig = go.Figure(data = [go.Parcats(dimensions=[country_dim, pm_dim, proc_dim, prio_dim, state_dim, rag_dim])])
+    fig = go.Figure(data = [go.Parcats(dimensions=[country_dim, pm_dim, proc_dim, prio_dim, state_dim, rag_dim],
+                                      hoveron='color')])
 
     fig
