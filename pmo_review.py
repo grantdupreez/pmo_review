@@ -70,10 +70,7 @@ if uploaded_file is not None:
 
     fig = go.Figure(data = [go.Parcats(dimensions=[country_dim, pm_dim, proc_dim, prio_dim, state_dim, rag_dim],
                                        color='Priority',
-                             color_continuous_scale=[(0.00, "red"),   (0.33, "red"),
-                                                     (0.33, "green"), (0.66, "green"),
-                                                     (0.66, "blue"),  (1.00, "blue")])
-                           ])                  
-                  
-                  
+                             color_discrete_sequence=["red", "green", "blue", "goldenrod", "magenta"]
+                           )])                  
+
     fig
