@@ -56,7 +56,6 @@ if uploaded_file is not None:
     colorscale = [[0, 'lightsteelblue'], [1, 'mediumseagreen']];
 
     fig = go.Figure(data = [go.Parcats(dimensions=[proc_dim, prio_dim, state_dim, rag_dim],
-            line={'color': color, 'colorscale': colorscale},
-            arrangement='freeform')])
+            line={'color': color, 'colorscale': colorscale})])
 
     fig
