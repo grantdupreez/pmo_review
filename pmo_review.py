@@ -32,20 +32,7 @@ if uploaded_file is not None:
 #ACTION
 #    df.to_csv(s3_string+dt_string)
 
-    fig = px.parallel_categories(df)
-
+    fig = px.parallel_categories(df, dimensions=['CR', 'Piority', 'State', 'Impacted Countries', 'Current STAGE']
+                                 , color="size", color_continuous_scale=px.colors.sequential.Inferno
+                                 , labels={'CR, 'Priority', 'State', 'Countries', 'Stage':'Current STAGE'})
     fig
-
-#    fig = px.timeline(df
-#                      , x_start="Start"
-#                      , x_end="Finish"
-#                      , y="CR"
-#                      , hover_name="CR"
-#                      , color='Status'
-#                      , opacity=.7
-#    )
-    
-#    fig.update_yaxes(autorange="reversed")     
-    
-#    fig
- 
