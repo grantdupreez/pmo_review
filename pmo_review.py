@@ -52,7 +52,7 @@ if uploaded_file is not None:
     )
         
     # Create parcats trace
-    color = df.['Process'];
+    color = df.Process;
     colorscale = [[0, 'lightsteelblue'], [1, 'mediumseagreen']];
 
     fig = go.Figure(data = [go.Parcats(dimensions=[proc_dim, prio_dim, state_dim, rag_dim],
