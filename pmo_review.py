@@ -31,7 +31,7 @@ if uploaded_file is not None:
 #    df['Finish'] = df['Finish'].astype('datetime64')
 #    df['CR'] = df['CR'].astype(str)
     
-    orders = list(df['Process'])
+#    orders = list(df['Process'])
     
     st.write(df)
     
@@ -40,16 +40,16 @@ if uploaded_file is not None:
 
 
 
-    fig = px.timeline(df
-                      , x_start="Start"
-                      , x_end="Finish"
-                      , y="CR"
-                      , hover_name="CR"
-                      , color='Status'
-                      , opacity=.7
-    )
+#    fig = px.timeline(df
+#                      , x_start="Start"
+#                      , x_end="Finish"
+#                      , y="CR"
+#                      , hover_name="CR"
+#                      , color='Status'
+#                      , opacity=.7
+#    )
     
-    fig.update_yaxes(autorange="reversed")     
+#    fig.update_yaxes(autorange="reversed")     
     
-    fig
+#    fig
  
