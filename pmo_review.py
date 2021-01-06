@@ -33,6 +33,6 @@ if uploaded_file is not None:
 #    df.to_csv(s3_string+dt_string)
 
     fig = px.parallel_categories(df, dimensions=['CR', 'Piority', 'State', 'Impacted Countries', 'Current STAGE']
-                                 , color="size", color_continuous_scale=px.colors.sequential.Inferno
-                                 , labels={'CR, 'Priority', 'State', 'Countries', 'Stage':'Current STAGE'})
+                                 , color="size", color_continuous_scale=px.colors.sequential.Inferno)
+
     fig
