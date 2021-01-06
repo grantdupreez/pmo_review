@@ -63,6 +63,6 @@ if uploaded_file is not None:
     color = df.Process;
 
     fig = go.Figure(data = [go.Parcats(dimensions=[country_dim, pm_dim, proc_dim, prio_dim, state_dim, rag_dim], 
-                                       color=df.Priority)])
+                                       color="Priority")])
 
     fig
