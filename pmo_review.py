@@ -55,12 +55,12 @@ if uploaded_file is not None:
     color = df.Process;
     colorscale = [[0, 'lightsteelblue'], [1, 'mediumseagreen']];
 
-    fig = go.Figure(data = [go.Parcats(dimensions=[proc_dim, prio_dim, state_dim, rag_dim],
-            line={'color': color, 'colorscale': colorscale},
-            hoveron='color', hoverinfo='count+probability',
-            labelfont={'size': 18, 'family': 'Times'},
-            tickfont={'size': 16, 'family': 'Times'},
-            arrangement='freeform')])
+    fig = go.Figure(data = [go.Parcats(dimensions=[proc_dim, prio_dim, state_dim, rag_dim])
+#            line={'color': color, 'colorscale': colorscale},
+#            hoveron='color', hoverinfo='count+probability',
+#            labelfont={'size': 18, 'family': 'Times'},
+#            tickfont={'size': 16, 'family': 'Times'},
+#            arrangement='freeform')])
 
 
     fig
