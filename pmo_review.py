@@ -43,7 +43,7 @@ if uploaded_file is not None:
     dimensions = [dict(values=df[label], label=label) for label in categorical_dimensions]
 
     # Build colorscale
-    color = np.zeros(len(cars_df), dtype='uint8')
+    color = np.zeros(len(df), dtype='uint8')
     colorscale = [[0, 'gray'], [1, 'firebrick']]
 
     # Build figure as FigureWidget
