@@ -37,7 +37,7 @@ if uploaded_file is not None:
 
     # Create dimensions
     proc_dim = go.parcats.Dimension(
-        values=df.['Process'],
+        values=df.Process,
         categoryorder='category ascending', label="Process"
     )
 
