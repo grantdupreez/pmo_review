@@ -68,10 +68,7 @@ if uploaded_file is not None:
 #        hoveron='color', hoverinfo='count+probability'
 #                                      )])
 
-    fig = go.Figure(data = [go.Parcats(dimensions=[country_dim, pm_dim, proc_dim, prio_dim, state_dim, rag_dim],
-#        bundlecolors = True,
-        hoveron = color,
-        hoverinfo='count+probability'
+    fig = go.Figure(data = [go.Parcats(dimensions=[country_dim, pm_dim, proc_dim, prio_dim, state_dim, rag_dim]
         )])                  
 
     fig
