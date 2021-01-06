@@ -4,23 +4,52 @@ import numpy as np
 import plotly.express as px
 import plotly.graph_objs as go
 
-st.write("**Upload project plan for a Gantt chart view**")
+#set the plan logging
+from datetime import datetime
+
+now = datetime.now()
+dt_string = now.strftime("%Y%m%d%H%M%S")+".csv"
+
+s3_string = ""
+#S3 storage for the plan logging
+
+#ACTION activate this when the log location is known - st.write('S3 path and log filename: '+s3_string+dt_string)
+
+
+st.title("Project deliverable viewer")
 st.write("Use the template csv file")
 
-list_of_dataframes = []
-uploaded_files = st.sidebar.file_uploader("Choose a file",type=['CSV'], accept_multiple_files=True)
-if uploaded_files is not None:
-    for file in uploaded_files:
-        file.seek(0)
-        df = pd.read_csv(file, header=[0], encoding='latin1')
-        list_of_dataframes.append(df)
-    
-    if list_of_dataframes:
-        merged_df = pd.concat(list_of_dataframes)
-    else: 
-        st.write("No data")
-    
-    st.write(merged_df)
+st.sidebar.title("upload the template")
 
-else:
-    static_store.clear()  
+uploaded_file = st.sidebar.file_uploader("Choose a file",type=['CSV'])
+if uploaded_file is not None:
+    df = pd.read_csv(uploaded_file, header=[0], encoding='latin1')
+    
+#    df['Start'] = pd.to_datetime(df['Start'])
+
+#    df['Start'] = df['Start'].astype('datetime64')
+#    df['Finish'] = df['Finish'].astype('datetime64')
+#    df['CR'] = df['CR'].astype(str)
+    
+    orders = list(df['Process'])
+    
+    st.write(df)
+    
+#ACTION
+#    df.to_csv(s3_string+dt_string)
+
+
+
+    fig = px.timeline(df
+                      , x_start="Start"
+                      , x_end="Finish"
+                      , y="CR"
+                      , hover_name="CR"
+                      , color='Status'
+                      , opacity=.7
+    )
+    
+    fig.update_yaxes(autorange="reversed")     
+    
+    fig
+ 
