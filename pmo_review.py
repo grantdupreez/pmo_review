@@ -23,14 +23,7 @@ st.sidebar.title("Upload the template")
 
 uploaded_file = st.sidebar.file_uploader("Choose a file",type=['CSV'])
 if uploaded_file is not None:
-#    df = pd.read_csv(uploaded_file, header=[0], encoding='latin1')
     df = pd.read_csv(uploaded_file, header=[0])
-    
-#    df['Start'] = pd.to_datetime(df['Start'])
-
-#    df['Start'] = df['Start'].astype('datetime64')
-#    df['Finish'] = df['Finish'].astype('datetime64')
-#    df['CR'] = df['CR'].astype(str)
     
     orders = list(df['Process'])
     
@@ -39,7 +32,9 @@ if uploaded_file is not None:
 #ACTION
 #    df.to_csv(s3_string+dt_string)
 
+    fig = px.parallel_categories(df)
 
+    fig
 
 #    fig = px.timeline(df
 #                      , x_start="Start"
