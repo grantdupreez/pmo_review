@@ -61,15 +61,14 @@ if uploaded_file is not None:
         
     # Create parcats trace
     color = df.Priority;
-#    colorscale = [[P1, 'lightsteelblue'], [P2, 'mediumseagreen'], [P3, 'lightsalmon']]
-
-#    fig = go.Figure(data = [go.Parcats(dimensions=[country_dim, pm_dim, proc_dim, prio_dim, state_dim, rag_dim],
-#        line={'color': color, 'colorscale': colorscale},
-#        hoveron='color', hoverinfo='count+probability'
-#                                      )])
+    colorscale = [[0, 'lightsteelblue'], [1, 'mediumseagreen']]
 
     fig = go.Figure(data = [go.Parcats(dimensions=[country_dim, pm_dim, proc_dim, prio_dim, state_dim, rag_dim],
-        color_continuous_scale=px.colors.sequential.Viridis
-        )])                  
+        line={'color': color, 'colorscale': colorscale},
+        hoveron='color', hoverinfo='count+probability'
+                                      )])
+
+#    fig = go.Figure(data = [go.Parcats(dimensions=[country_dim, pm_dim, proc_dim, prio_dim, state_dim, rag_dim]
+#        )])                  
 
     fig
