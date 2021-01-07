@@ -70,3 +70,16 @@ if uploaded_file is not None:
         )])
     
     fig
+
+#sunburst chart
+
+#    fig =go.Figure(go.Sunburst(
+#        labels=[ "Delivery partner", "Build Funding Source", "Priority"],
+#        parents=["",    "Eve",  "Eve",  "Seth", "Seth", "Eve",  "Eve",  "Awan",  "Eve" ],
+#        values=[  65,    14,     12,     10,     2,      6,      6,      4,       4],
+#        branchvalues="total",
+#    ))
+#    fig.update_layout(margin = dict(t=0, l=0, r=0, b=0))
+
+#    fig
+    
