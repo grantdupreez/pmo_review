@@ -64,9 +64,14 @@ if uploaded_file is not None:
    
     st.write(df)
     
-#    make_choice = st.sidebar.selectbox('Select a business process:', df['Process'].drop_duplicates())
+    choice = st.sidebar.multiselect('Select business process(es):', df['Process'].drop_duplicates())
+    st.write(choice)
+	
 #    if make_choice:
 #        df.Process == make_choice
+
+#show histogram
+
 
     show_par_chart(df)
 
