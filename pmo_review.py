@@ -33,6 +33,11 @@ if uploaded_file is not None:
 #ACTION
 #    df.to_csv(s3_string+dt_string)
 
+    sel_proc = df['Process'].drop_duplicates()
+    make_choice = st.sidebar.selectbox('Select your vehicle:', sel_proc)
+
+
+
 #Graph parameters
 
     # Create dimensions
