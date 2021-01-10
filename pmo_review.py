@@ -60,7 +60,7 @@ if uploaded_file is not None:
     
 #    df.loc[(df['Process']=proc_choice) & (df['Priority']=prio_choice))]
 #    df.loc[(df['Process']=proc_choice)]
-    df['Process'] == proc_choice
+    df['Process'] = proc_choice
  
     show_par_chart(df)
 
