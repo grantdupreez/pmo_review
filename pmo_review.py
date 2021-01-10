@@ -55,8 +55,8 @@ if uploaded_file is not None:
     
     processes = df['Process'].drop_duplicates()
     proc_choice = st.sidebar.selectbox('Select the process:', processes)
-    priority = df["Priority"].loc[df["Process"] = proc_choice]
-    year_choice = st.sidebar.selectbox('', years) 
+#    priority = df["Priority"].loc[df["Process"] = proc_choice]
+#    year_choice = st.sidebar.selectbox('', years) 
     show_par_chart(df)
 
 
