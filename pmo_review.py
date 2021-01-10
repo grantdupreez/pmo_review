@@ -50,18 +50,13 @@ st.sidebar.title("Upload the template")
 uploaded_file = st.sidebar.file_uploader("Choose a file",type=['CSV'])
 if uploaded_file is not None:
     df = pd.read_csv(uploaded_file, header=[0])
-    
     orders = list(df['Process'])
-   
     st.write(df)
-    
-#    st.sidebar.selectbox('Select business process(es):', df['Process'].drop_duplicates())
-    	
     choice = st.sidebar.selectbox('Select business process(es):', df['Process'].drop_duplicates())
-
     if choice:
 	st.write(choice)
 	newdf = df.Process == choice
+	st.write(df)
 	show_par_chart(newdf)
 
 #ACTION
