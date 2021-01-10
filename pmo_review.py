@@ -40,9 +40,9 @@ if uploaded_file is not None:
     df = pd.read_csv(uploaded_file, header=[0])
     orders = list(df['Process'])
     sel_proc = data_set['Process'].drop_duplicates()
-    make_choice = st.sidebar.selectbox('Select a business process:', sel_proc)
-    if make_choice:
-	data_set.Process == make_choice
+    choice = st.sidebar.selectbox('Select a business process:', sel_proc)
+    if choice:
+	data_set.Process == choice
         st.write(data_set)
         show_par_chart(data_set)
  
