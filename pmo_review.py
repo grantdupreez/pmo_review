@@ -51,13 +51,13 @@ st.title("Project deliverable viewer")
 st.write("Use the template csv file")
 st.sidebar.title("Upload the template")
 if uploaded_file is not None:
-	data_set = load_file(100)
-	if data_set:
-		sel_proc = data_set['Process'].drop_duplicates()
-            	make_choice = st.sidebar.selectbox('Select a business process:', sel_proc)
-            	st.write("2/ show selectbox, if data_set")
-            	if make_choice:
-                	data_set.Process == make_choice
-                	st.write(data_set)
-                	show_par_chart(data_set)
+    data_set = load_file(100)
+    if data_set:
+	sel_proc = data_set['Process'].drop_duplicates()
+        make_choice = st.sidebar.selectbox('Select a business process:', sel_proc)
+        st.write("2/ show selectbox, if data_set")
+        if make_choice:
+		data_set.Process == make_choice
+                st.write(data_set)
+                show_par_chart(data_set)
  
