@@ -64,11 +64,12 @@ if uploaded_file is not None:
    
     st.write(df)
     
-    choice = st.sidebar.multiselect('Select business process(es):', df['Process'].drop_duplicates())
+    choice = st.sidebar.selectbox('Select business process(es):', df['Process'].drop_duplicates())
     st.write(choice)
 	
     if choice:
-        newdf = df[df.apply(lamda x:x['Process'] == choice)]
+#        newdf = df[df.apply(lamda x:x['Process'] == choice)]
+	newdf = df[(df.['Process'] == choice)]
 	show_par_chart(newdf)
 
 #show histogram
