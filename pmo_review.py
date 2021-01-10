@@ -37,11 +37,11 @@ st.write("Use the template csv file")
 st.sidebar.title("Upload the template")
 
 if uploaded_file is not None:
-	df = pd.read_csv(uploaded_file, header=[0])
-	orders = list(df['Process'])
-	sel_proc = data_set['Process'].drop_duplicates()
-	choice = st.sidebar.selectbox('Select a business process:', sel_proc)
-	if st.button("Process"):
-		data_set.Process == choice
-		st.write(data_set)
-		show_par_chart(data_set)
+    df = pd.read_csv(uploaded_file, header=[0])
+    orders = list(df['Process'])
+    sel_proc = data_set['Process'].drop_duplicates()
+    choice = st.sidebar.selectbox('Select a business process:', sel_proc)
+    if st.button("Process"):
+	data_set.Process == choice
+	st.write(data_set)
+	show_par_chart(data_set)
