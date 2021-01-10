@@ -59,7 +59,8 @@ if uploaded_file is not None:
 #        st.write(choice)
 #        newdf = df.Process == choice
 #        st.write(df)
-        show_par_chart(newdf)
+#        show_par_chart(newdf)
+        show_par_chart(df)
 
 #ACTION
 #    df.to_csv(s3_string+dt_string)
