@@ -52,8 +52,10 @@ if uploaded_file is not None:
     df = pd.read_csv(uploaded_file, header=[0])
     orders = list(df['Process'])
     st.write(df)
-    choice = st.sidebar.selectbox('Select business process(es):', df['Process'].drop_duplicates())
-    if choice:
+#    choice = st.sidebar.selectbox('Select business process(es):', df['Process'].drop_duplicates())
+#    if choice:
+    if st.sidebar.selectbox('Select business process(es):', df['Process'].drop_duplicates())
+        choice = st.sidebar.selectbox('Select business process(es):', df['Process'].drop_duplicates())
         st.write(choice)
         newdf = df.Process == choice
 #        st.write(df)
