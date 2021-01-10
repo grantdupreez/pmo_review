@@ -25,36 +25,26 @@ def show_par_chart(dataframe):
         values=ds.Process,
         categoryorder='category ascending', label="Process"
     )
-
     prio_dim = go.parcats.Dimension(values=ds.Priority, label="Priority")
-
     state_dim = go.parcats.Dimension(
         values=ds.State, label="State"
     )
-
     country_dim = go.parcats.Dimension(
         values=ds.Impacted_Countries, label="Countries"
     )
-
     pm_dim = go.parcats.Dimension(
         values=ds.PM, label="PM"
     )
-    
     rag_dim = go.parcats.Dimension(
         values=ds.RAG, label="RAG"
-    )
-        
+    )   
     color = ds.Priority;
-
     fig = go.Figure(data = [go.Parcats(dimensions=[country_dim, pm_dim, proc_dim, prio_dim, state_dim, rag_dim],
         line={'color': ["SkyBlue", "SlateGray", "Silver"]},
         hoveron='color'
         )])
-    
     fig
 
-
-    
 def main():
     st.title("Project deliverable viewer")
     st.write("Use the template csv file")
