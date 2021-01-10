@@ -5,90 +5,69 @@ import ipywidgets as widgets
 import plotly.express as px
 import plotly.graph_objs as go
 
-#set the plan logging
-from datetime import datetime
+def log_loc():
+    #set the plan logging
+    from datetime import datetime
+    now = datetime.now()
+    dt_string = now.strftime("%Y%m%d%H%M%S")+".csv"
+    s3_string = ""
+    #S3 storage for the plan logging
+    return s3_string+dt_string
 
-now = datetime.now()
-dt_string = now.strftime("%Y%m%d%H%M%S")+".csv"
-
-s3_string = ""
-#S3 storage for the plan logging
-
-#ACTION activate this when the log location is known - st.write('S3 path and log filename: '+s3_string+dt_string)
-
-
-st.title("Project deliverable viewer")
-st.write("Use the template csv file")
-
-st.sidebar.title("Upload the template")
-
-uploaded_file = st.sidebar.file_uploader("Choose a file",type=['CSV'])
-if uploaded_file is not None:
-    df = pd.read_csv(uploaded_file, header=[0])
-    
+def load_file(nrows):
+    df = pd.read_csv(uploaded_file, header=[0], nrows=nrows)
     orders = list(df['Process'])
+    return df
 
-#TODO: write the selection options here:
-#    sel_proc = df['Process'].drop_duplicates()
-#    make_choice = st.sidebar.selectbox('Select a business process:', sel_proc)
-#    if make_choice:
-#        df.Process == make_choice
-   
-    st.write(df)
-    
-#ACTION
-#    df.to_csv(s3_string+dt_string)
+def show_data(data_frame)
+    st.write(data_frame)
 
-
-
-
-#Graph parameters
-
+def show_par_chart(ds)
     # Create dimensions
     proc_dim = go.parcats.Dimension(
-        values=df.Process,
+        values=ds.Process,
         categoryorder='category ascending', label="Process"
     )
 
-    prio_dim = go.parcats.Dimension(values=df.Priority, label="Priority")
+    prio_dim = go.parcats.Dimension(values=ds.Priority, label="Priority")
 
     state_dim = go.parcats.Dimension(
-        values=df.State, label="State"
+        values=ds.State, label="State"
     )
 
     country_dim = go.parcats.Dimension(
-        values=df.Impacted_Countries, label="Countries"
+        values=ds.Impacted_Countries, label="Countries"
     )
 
     pm_dim = go.parcats.Dimension(
-        values=df.PM, label="PM"
+        values=ds.PM, label="PM"
     )
     
     rag_dim = go.parcats.Dimension(
-        values=df.RAG, label="RAG"
+        values=ds.RAG, label="RAG"
     )
         
-    # Create parcats trace
-    color = df.Priority;
-#    colorscale = [[0, 'lightsteelblue'], [1, 'mediumseagreen']]
+    color = ds.Priority;
 
     fig = go.Figure(data = [go.Parcats(dimensions=[country_dim, pm_dim, proc_dim, prio_dim, state_dim, rag_dim],
         line={'color': ["SkyBlue", "SlateGray", "Silver"]},
-#        hoveron='color', hoverinfo='count+probability'
         hoveron='color'
         )])
     
     fig
 
-#sunburst chart
 
-#    fig =go.Figure(go.Sunburst(
-#        labels=[ "Delivery partner", "Build Funding Source", "Priority"],
-#        parents=["",    "Eve",  "Eve",  "Seth", "Seth", "Eve",  "Eve",  "Awan",  "Eve" ],
-#        values=[  65,    14,     12,     10,     2,      6,      6,      4,       4],
-#        branchvalues="total",
-#    ))
-#    fig.update_layout(margin = dict(t=0, l=0, r=0, b=0))
-
-#    fig
     
+def main()
+    st.title("Project deliverable viewer")
+    st.write("Use the template csv file")
+    st.sidebar.title("Upload the template")
+    if uploaded_file is not None:
+        data_set = load_file(100):
+            sel_proc = data_set['Process'].drop_duplicates()
+            make_choice = st.sidebar.selectbox('Select a business process:', sel_proc)
+            if make_choice:
+                data_set.Process == make_choice
+                st.write(data_set)
+                show_par_chart(data_set)
+ 
