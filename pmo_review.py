@@ -68,7 +68,7 @@ if uploaded_file is not None:
     st.write(choice)
 	
     if choice:
-        df.loc[(df['Process'])] = choice
+        df.loc[choice]
 
 #show histogram
 
