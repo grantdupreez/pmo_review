@@ -31,14 +31,6 @@ def show_par_chart(dataframe):
         )])
     fig
 
-	
-import streamlit as st
-import pandas as pd
-import numpy as np
-import ipywidgets as widgets
-import plotly.express as px
-import plotly.graph_objs as go
-
 #set the plan logging
 from datetime import datetime
 
@@ -49,7 +41,6 @@ s3_string = ""
 #S3 storage for the plan logging
 
 #ACTION activate this when the log location is known - st.write('S3 path and log filename: '+s3_string+dt_string)
-
 
 st.title("Project deliverable viewer")
 st.write("Use the template csv file")
