@@ -61,16 +61,15 @@ if uploaded_file is not None:
     df = pd.read_csv(uploaded_file, header=[0])
     
     orders = list(df['Process'])
-
-#TODO: write the selection options here:
-#    sel_proc = df['Process'].drop_duplicates()
-#    make_choice = st.sidebar.selectbox('Select a business process:', sel_proc)
-#    if make_choice:
-#        df.Process == make_choice
    
     st.write(df)
     
-#ACTION
-#    df.to_csv(s3_string+dt_string)
+    sel_proc = df['Process'].drop_duplicates()
+    make_choice = st.sidebar.selectbox('Select a business process:', sel_proc)
+    if make_choice:
+        df.Process == make_choice
 
     show_par_chart(df)
+
+#ACTION
+#    df.to_csv(s3_string+dt_string)
