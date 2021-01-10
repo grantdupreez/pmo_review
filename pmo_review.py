@@ -15,6 +15,7 @@ def log_loc():
     return s3_string+dt_string
 
 def load_file(nrows):
+    st.write("1/ load file function start")
     df = pd.read_csv(uploaded_file, header=[0], nrows=nrows)
     orders = list(df['Process'])
     return df
@@ -54,6 +55,7 @@ def main():
             if data_set:
                 sel_proc = data_set['Process'].drop_duplicates()
                 make_choice = st.sidebar.selectbox('Select a business process:', sel_proc)
+                st.write("2/ show selectbox, if data_set")
                 if make_choice:
                     data_set.Process == make_choice
                     st.write(data_set)
