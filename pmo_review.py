@@ -45,4 +45,3 @@ if uploaded_file is not None:
 	    data_set.Process == choice
             st.write(data_set)
             show_par_chart(data_set)
- 
