@@ -68,12 +68,13 @@ if uploaded_file is not None:
     st.write(choice)
 	
     if choice:
-        df[df.apply(lamda x:x['Process'] == choice)]
+        newdf = df[df.apply(lamda x:x['Process'] == choice)]
+	show_par_chart(newdf)
 
 #show histogram
 
 
-    show_par_chart(df)
+#    show_par_chart(df)
 
 #ACTION
 #    df.to_csv(s3_string+dt_string)
