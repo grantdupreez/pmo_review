@@ -8,23 +8,23 @@ import plotly.graph_objs as go
 def show_par_chart(dataframe):
     # Create dimensions
     proc_dim = go.parcats.Dimension(
-        values=ds.Process,
+        values=df.Process,
         categoryorder='category ascending', label="Process"
     )
     prio_dim = go.parcats.Dimension(values=ds.Priority, label="Priority")
     state_dim = go.parcats.Dimension(
-        values=ds.State, label="State"
+        values=df.State, label="State"
     )
     country_dim = go.parcats.Dimension(
-        values=ds.Impacted_Countries, label="Countries"
+        values=df.Impacted_Countries, label="Countries"
     )
     pm_dim = go.parcats.Dimension(
-        values=ds.PM, label="PM"
+        values=df.PM, label="PM"
     )
     rag_dim = go.parcats.Dimension(
-        values=ds.RAG, label="RAG"
+        values=df.RAG, label="RAG"
     )   
-    color = ds.Priority;
+    color = df.Priority;
     fig = go.Figure(data = [go.Parcats(dimensions=[country_dim, pm_dim, proc_dim, prio_dim, state_dim, rag_dim],
         line={'color': ["SkyBlue", "SlateGray", "Silver"]},
         hoveron='color'
