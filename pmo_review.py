@@ -41,7 +41,8 @@ if uploaded_file is not None:
     orders = list(df['Process'])
     sel_proc = data_set['Process'].drop_duplicates()
     choice = st.sidebar.selectbox('Select a business process:', sel_proc)
-    if st.button("Process"):
-	data_set.Process == choice
-	st.write(data_set)
-	show_par_chart(data_set)
+    st.write(choice)
+#    if st.button("Process"):
+#	data_set.Process == choice
+#	st.write(data_set)
+#	show_par_chart(data_set)
