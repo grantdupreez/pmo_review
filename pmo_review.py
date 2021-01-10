@@ -67,8 +67,9 @@ if uploaded_file is not None:
     choice = st.sidebar.selectbox('Select business process(es):', df['Process'].drop_duplicates())
 
     if choice:
-	newdf = df[(df.['Process'] == choice)]
-	show_par_chart(newdf)
+	st.write(choice)
+#		newdf = df[(df.['Process'] == choice)]
+#	show_par_chart(newdf)
 
 #ACTION
 #    df.to_csv(s3_string+dt_string)
