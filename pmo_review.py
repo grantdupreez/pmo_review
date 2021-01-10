@@ -19,9 +19,6 @@ def load_file(nrows):
     orders = list(df['Process'])
     return df
 
-def show_data(data_frame)
-    st.write(data_frame)
-
 def show_par_chart(ds)
     # Create dimensions
     proc_dim = go.parcats.Dimension(
