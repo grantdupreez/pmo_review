@@ -55,7 +55,7 @@ def show_par_chart(dataframe):
 
 
     
-def main()
+def main():
     st.title("Project deliverable viewer")
     st.write("Use the template csv file")
     st.sidebar.title("Upload the template")
