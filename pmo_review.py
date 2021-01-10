@@ -56,7 +56,7 @@ if uploaded_file is not None:
     if choice:
         st.write(choice)
         newdf = df.Process == choice
-        st.write(df)
+#        st.write(df)
         show_par_chart(newdf)
 
 #ACTION
