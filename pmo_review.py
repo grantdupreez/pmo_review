@@ -56,8 +56,8 @@ if uploaded_file is not None:
 #    if choice:
     if st.sidebar.selectbox('Select business process(es):', df['Process'].drop_duplicates()):
 #        choice = st.sidebar.selectbox('Select business process(es):', df['Process'].drop_duplicates())
-        st.write(choice)
-        newdf = df.Process == choice
+#        st.write(choice)
+#        newdf = df.Process == choice
 #        st.write(df)
         show_par_chart(newdf)
 
