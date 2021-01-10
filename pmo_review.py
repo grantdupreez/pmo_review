@@ -52,15 +52,24 @@ if uploaded_file is not None:
     df = pd.read_csv(uploaded_file, header=[0])
     orders = list(df['Process'])
     st.write(df)
+    
+    processes = df['Process'].drop_duplicates()
+    proc_choice = st.sidebar.selectbox('Select the process:', processes)
+    priority = df["Priority"].loc[df["Process"] = proc_choice]
+    year_choice = st.sidebar.selectbox('', years) 
+    show_par_chart(df)
+
+
+
 #    choice = st.sidebar.selectbox('Select business process(es):', df['Process'].drop_duplicates())
 #    if choice:
-    if st.sidebar.selectbox('Select business process(es):', df['Process'].drop_duplicates()):
+#    if st.sidebar.selectbox('Select business process(es):', df['Process'].drop_duplicates()):
 #        choice = st.sidebar.selectbox('Select business process(es):', df['Process'].drop_duplicates())
 #        st.write(choice)
 #        newdf = df.Process == choice
 #        st.write(df)
 #        show_par_chart(newdf)
-        show_par_chart(df)
+#        show_par_chart(df)
 
 #ACTION
 #    df.to_csv(s3_string+dt_string)
