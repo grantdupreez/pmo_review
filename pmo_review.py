@@ -28,7 +28,7 @@ if uploaded_file is not None:
     
     orders = list(df['Process'])
 
-    sel_proc = df['Process'].drop_duplicates()
+#    sel_proc = df['Process'].drop_duplicates()
     make_choice = st.sidebar.selectbox('Select a business process:', sel_proc)
     if make_choice:
         df.Process == make_choice
