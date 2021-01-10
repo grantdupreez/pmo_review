@@ -68,7 +68,7 @@ if uploaded_file is not None:
     st.write(choice)
 	
     if choice:
-        df[df['Process'].isin(choice)]
+        df[df.apply(lamda x:x['Process'] == choice)]
 
 #show histogram
 
