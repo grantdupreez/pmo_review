@@ -61,3 +61,7 @@ def main():
                 st.write(data_set)
                 show_par_chart(data_set)
  
+
+if __name__ == '__main__':
+	main()
+    
