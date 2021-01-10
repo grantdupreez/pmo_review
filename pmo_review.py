@@ -5,21 +5,6 @@ import ipywidgets as widgets
 import plotly.express as px
 import plotly.graph_objs as go
 
-def log_loc():
-    #set the plan logging
-    from datetime import datetime
-    now = datetime.now()
-    dt_string = now.strftime("%Y%m%d%H%M%S")+".csv"
-    s3_string = ""
-    #S3 storage for the plan logging
-    return s3_string+dt_string
-
-def load_file(nrows):
-    st.write("1/ load file function start")
-    df = pd.read_csv(uploaded_file, header=[0], nrows=nrows)
-    orders = list(df['Process'])
-    return df
-
 def show_par_chart(dataframe):
     # Create dimensions
     proc_dim = go.parcats.Dimension(
@@ -50,14 +35,14 @@ def show_par_chart(dataframe):
 st.title("Project deliverable viewer")
 st.write("Use the template csv file")
 st.sidebar.title("Upload the template")
+
 if uploaded_file is not None:
-    data_set = load_file(100)
-    if data_set:
-	sel_proc = data_set['Process'].drop_duplicates()
-        make_choice = st.sidebar.selectbox('Select a business process:', sel_proc)
-        st.write("2/ show selectbox, if data_set")
-        if make_choice:
-		data_set.Process == make_choice
-                st.write(data_set)
-                show_par_chart(data_set)
+    df = pd.read_csv(uploaded_file, header=[0])
+    orders = list(df['Process'])
+    sel_proc = data_set['Process'].drop_duplicates()
+    make_choice = st.sidebar.selectbox('Select a business process:', sel_proc)
+    if make_choice:
+	data_set.Process == make_choice
+        st.write(data_set)
+        show_par_chart(data_set)
  
