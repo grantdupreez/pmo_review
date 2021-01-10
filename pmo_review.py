@@ -68,9 +68,10 @@ if uploaded_file is not None:
     st.write(choice)
 	
     if choice:
-#        newdf = df[df.apply(lamda x:x['Process'] == choice)]
 	newdf = df[(df.['Process'] == choice)]
 	show_par_chart(newdf)
+
+#        newdf = df[df.apply(lamda x:x['Process'] == choice)]
 
 #show histogram
 
