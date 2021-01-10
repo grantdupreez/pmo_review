@@ -64,8 +64,8 @@ if uploaded_file is not None:
    
     st.write(df)
     
-    sel_proc = df['Process'].drop_duplicates()
-    make_choice = st.sidebar.selectbox('Select a business process:', sel_proc)
+#    sel_proc = df['Process'].drop_duplicates()
+    make_choice = st.sidebar.selectbox('Select a business process:', df['Process'].drop_duplicates())
     if make_choice:
         df.Process == make_choice
 
