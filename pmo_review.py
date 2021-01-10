@@ -68,8 +68,8 @@ if uploaded_file is not None:
 
     if choice:
 	st.write(choice)
-#	newdf = df[(df.['Process'] == choice)]
-#	show_par_chart(newdf)
+	newdf = df.Process == choice
+	show_par_chart(newdf)
 
 #ACTION
 #    df.to_csv(s3_string+dt_string)
