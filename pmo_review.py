@@ -59,22 +59,10 @@ if uploaded_file is not None:
 #    prio_choice = st.sidebar.selectbox('', Priority) 
     
 #    df.loc[(df['Process']=proc_choice) & (df['Priority']=prio_choice))]
- #   df.loc[(df['Process']=proc_choice)]
-    df['Process']=proc_choice
+    df.loc[(df['Process']=proc_choice)]
+#    df['Process']=proc_choice
  
     show_par_chart(df)
-
-
-
-#    choice = st.sidebar.selectbox('Select business process(es):', df['Process'].drop_duplicates())
-#    if choice:
-#    if st.sidebar.selectbox('Select business process(es):', df['Process'].drop_duplicates()):
-#        choice = st.sidebar.selectbox('Select business process(es):', df['Process'].drop_duplicates())
-#        st.write(choice)
-#        newdf = df.Process == choice
-#        st.write(df)
-#        show_par_chart(newdf)
-#        show_par_chart(df)
 
 #ACTION
 #    df.to_csv(s3_string+dt_string)
