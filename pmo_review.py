@@ -64,7 +64,9 @@ if uploaded_file is not None:
    
     st.write(df)
     
-    choice = st.sidebar.selectbox('Select business process(es):', df['Process'].drop_duplicates())
+    st.sidebar.selectbox('Select business process(es):', df['Process'].drop_duplicates())
+    	
+#    choice = st.sidebar.selectbox('Select business process(es):', df['Process'].drop_duplicates())
 
 #    if choice:
 #	st.write(choice)
