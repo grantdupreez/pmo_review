@@ -11,7 +11,7 @@ def show_par_chart(dataframe):
         values=df.Process,
         categoryorder='category ascending', label="Process"
     )
-    prio_dim = go.parcats.Dimension(values=ds.Priority, label="Priority")
+    prio_dim = go.parcats.Dimension(values=df.Priority, label="Priority")
     state_dim = go.parcats.Dimension(
         values=df.State, label="State"
     )
