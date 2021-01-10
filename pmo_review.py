@@ -67,8 +67,8 @@ if uploaded_file is not None:
     choice = st.sidebar.multiselect('Select business process(es):', df['Process'].drop_duplicates())
     st.write(choice)
 	
-#    if make_choice:
-#        df.Process == make_choice
+    if make_choice:
+        df.Process == make_choice
 
 #show histogram
 
