@@ -68,7 +68,8 @@ if uploaded_file is not None:
 #    new_df = df.loc[proc_choice]
 
 #    show_par_chart(df)
-    show_par_chart(new_df)
+    st.write(new_df)
+######    show_par_chart(new_df)
 
 #ACTION
 #    df.to_csv(s3_string+dt_string)
