@@ -58,7 +58,7 @@ if uploaded_file is not None:
     priority = df["Priority"].loc[df["Process"] == proc_choice]
     prio_choice = st.sidebar.selectbox('', Priority) 
     
-    df.loc[(df['Process'] == proc_choice) & (df['Priority'] == prio_choice))]
+    df.loc[(df['Process'] == proc_choice) & (df['Priority'] == prio_choice)]
 #    df.loc[(df['Process']=proc_choice)]
 
     st.write("Process choice: " + proc_choice)
