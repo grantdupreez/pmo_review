@@ -53,7 +53,8 @@ if uploaded_file is not None:
     orders = list(df['Process'])
     st.write(df)
     
-    processes = df['Process'].drop_duplicates()
+#    processes = df['Process'].drop_duplicates()
+    processes = df['Process'].unique()
     proc_choice = st.sidebar.selectbox('Select the process:', processes)
 #    priority = df["Priority"].loc[df["Process"] == proc_choice]
 #    prio_choice = st.sidebar.selectbox('', priority) 
