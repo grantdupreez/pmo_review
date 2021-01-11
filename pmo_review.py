@@ -19,7 +19,7 @@ def show_par_chart(dataframe):
         values=new_df.Impacted_Countries, label="Countries"
     )
     partner_dim = go.parcats.Dimension(
-        values=new_df.Delivery_Partner, label="Partner"
+        values=new_df.Partner, label="Partner"
     )
     funding_dim = go.parcats.Dimension(
         values=new_df.Funding, label="Funding"
