@@ -40,8 +40,8 @@ def show_par_chart(dataframe):
 #    color = new_df.Priority;
     color = new_df.RAG;
     fig = go.Figure(data = [go.Parcats(dimensions=[rag_dim, country_dim, pm_dim, funding_dim, partner_dim, prio_dim, state_dim],
-#        line={'color': ["SkyBlue", "SlateGray", "Silver"]},
-        line={'color': ["Red", "Yellow", "Green"]},
+        line={'color': ["SkyBlue", "SlateGray", "Silver"]},
+#        line={'color': ["Red", "Yellow", "Green"]},
         hoveron='color'
         )])
     fig
