@@ -89,6 +89,5 @@ if uploaded_file is not None:
 #ACTION
 #    df.to_csv(s3_string+dt_string)
 
-    hist_values = np.histogram(
-    new_df.Priority, bins=len(new_df.Priority))
+    hist_values = np.histogram(new_df.Priority)
     st.bar_chart(hist_values)
