@@ -62,7 +62,7 @@ if uploaded_file is not None:
 #    df.loc[(df['Process']=proc_choice)]
 
     st.write("Process choice: " + proc_choice)
-    new_df = df[df["Process"] == Proc_choice]
+    new_df = df[df["Process"] == proc_choice]
 #    df['Process'] = proc_choice
 
 #    new_df = df.loc[proc_choice]
