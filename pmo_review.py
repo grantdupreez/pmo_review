@@ -62,11 +62,13 @@ if uploaded_file is not None:
 #    df.loc[(df['Process']=proc_choice)]
 
     st.write("Process choice: " + proc_choice)
-    df['Process'] = proc_choice
+    new_df = df[df["Process"] = Proc_choice]
+#    df['Process'] = proc_choice
 
 #    new_df = df.loc[proc_choice]
 
-    show_par_chart(df)
+#    show_par_chart(df)
+    show_par_chart(new_df)
 
 #ACTION
 #    df.to_csv(s3_string+dt_string)
