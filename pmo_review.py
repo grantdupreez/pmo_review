@@ -13,8 +13,8 @@ def show_par_chart(dataframe):
     )
     prio_dim = go.parcats.Dimension(values=new_df.Priority, label="Priority")
     
-    state_dim = go.parcats.Dimension(
-        values=new_df.State, label="State"
+    phase_dim = go.parcats.Dimension(
+        values=new_df.Phase, label="Phase"
     )
     
     country_dim = go.parcats.Dimension(
@@ -39,7 +39,7 @@ def show_par_chart(dataframe):
     
 #    color = new_df.Priority;
     color = new_df.RAG;
-    fig = go.Figure(data = [go.Parcats(dimensions=[rag_dim, country_dim, pm_dim, funding_dim, partner_dim, prio_dim, state_dim],
+    fig = go.Figure(data = [go.Parcats(dimensions=[prio_dim, phase_dim, country_dim, pm_dim, funding_dim, partner_dim, rag_dim],
         line={'color': ["SkyBlue", "SlateGray", "Silver"]},
 #        line={'color': ["Red", "Yellow", "Green"]},
         hoveron='color'
