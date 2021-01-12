@@ -37,13 +37,13 @@ def show_par_chart(dataframe):
         values=new_df.Status, label="Status"
     )
     
-#    color = new_df.Priority;
     color = new_df.Status;
     fig = go.Figure(data = [go.Parcats(dimensions=[prio_dim, phase_dim, country_dim, pm_dim, funding_dim, partner_dim, status_dim],
         line={'color': ["SkyBlue", "SlateGray", "Silver"]},
 #        line={'color': ["Red", "Yellow", "Green"]},
-        hoveron='color',
-        hovertemplate=new_df.CR
+#        hoveron='color',
+        hoveron='category',
+#        hoveron='dimension',
         )])
     fig
 
