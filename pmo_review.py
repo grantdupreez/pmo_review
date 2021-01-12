@@ -42,8 +42,8 @@ def show_par_chart(dataframe):
         line={'color': ["SkyBlue", "SlateGray", "Silver"]},
 #        line={'color': ["Red", "Yellow", "Green"]},
 #        hoveron='color',
-        hoveron='category',
-#        hoveron='dimension',
+#        hoveron='category',
+        hoveron='dimension',
         )])
     fig
 
