@@ -97,7 +97,7 @@ if uploaded_file is not None:
     new_df.sort_values(by=['Tech_Golive'], inplace=True, ascending=False)
     hist_chart(new_df, 'Tech_Golive')
 
-    fig = px.pie(new_df)
+    fig = px.pie(new_df, labels=new_df.Tech_Golive, values=new_df.Tech_Golive)
     fig
 
 #ACTION
