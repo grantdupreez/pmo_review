@@ -47,6 +47,10 @@ def show_par_chart(dataframe):
         )])
     fig
 
+def hist_chart(dataframe):
+    fig = px.histogram(new_df, x="Status")
+    fig
+
 #set the plan logging
 from datetime import datetime
 
@@ -86,6 +90,8 @@ if uploaded_file is not None:
 #    show_par_chart(df)
     st.write(new_df)
     show_par_chart(new_df)
+    
+    hist_chart(new_df)
 
 #ACTION
 #    df.to_csv(s3_string+dt_string)
