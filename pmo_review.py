@@ -93,6 +93,7 @@ if uploaded_file is not None:
     
     hist_chart(new_df, 'Status')
     hist_chart(new_df, 'Impacted_Countries')
+    hist_chart(new_df, 'Tech_Golive')
 
 #ACTION
 #    df.to_csv(s3_string+dt_string)
