@@ -53,6 +53,9 @@ def hist_chart(dataframe, xaxis):
 
 def hist2_chart(dataframe, xaxis):
     fig = px.histogram(new_df, xaxis, bargap=0.2, color=xaxis, height=300, title=xaxis)
+    fig.update_layout(
+        bargap=0.2
+    )
     fig
     
     
