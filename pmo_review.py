@@ -93,7 +93,7 @@ if uploaded_file is not None:
     
     hist_chart(new_df, 'Status')
     hist_chart(new_df, 'Impacted_Countries')
-    new_df.sort_values(by=['Tech_Golive'], inplace=True, ascending=False)
+    new_df.sort_values(by=['Tech_Golive'], inplace=True, ascending=True)
     hist_chart(new_df, 'Tech_Golive')
 
 #ACTION
