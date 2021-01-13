@@ -48,7 +48,7 @@ def show_par_chart(dataframe):
     fig
 
 def hist_chart(dataframe, xaxis):
-    fig = px.histogram(new_df, xaxis)
+    fig = px.histogram(new_df, xaxis, height=300, title=xaxis)
     fig
 
 #set the plan logging
