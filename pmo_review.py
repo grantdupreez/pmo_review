@@ -92,7 +92,7 @@ if uploaded_file is not None:
     show_par_chart(new_df)
     
     hist_chart(new_df, 'Status')
-    hist_chart(new_df, 'Countries')
+    hist_chart(new_df, 'Impacted_Countries')
 
 #ACTION
 #    df.to_csv(s3_string+dt_string)
