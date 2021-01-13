@@ -101,7 +101,7 @@ if uploaded_file is not None:
     new_df["Tech_Golive"] = pd.to_datetime(new_df["Tech_Golive"], errors='coerce')
     new_df.sort_values(by=['Tech_Golive'], inplace=True, ascending=False)
     hist_chart(new_df, 'Tech_Golive')
-    scat_chart(new_df, 'Tech_Golive', '')
+    scat_chart(new_df, 'Tech_Golive', sum('Tech_Golive'))
 
 #ACTION
 #    df.to_csv(s3_string+dt_string)
