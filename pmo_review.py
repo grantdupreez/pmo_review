@@ -97,11 +97,6 @@ if uploaded_file is not None:
     new_df.sort_values(by=['Tech_Golive'], inplace=True, ascending=False)
     hist_chart(new_df, 'Tech_Golive')
 
-    fig = go.Figure(data=[go.Pie(labels=new_df.Tech_Golive, values=new_df.Tech_Golive, textinfo='label',
-                             insidetextorientation='radial'
-                            )])
-    fig
-
 #ACTION
 #    df.to_csv(s3_string+dt_string)
 
