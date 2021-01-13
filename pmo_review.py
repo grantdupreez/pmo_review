@@ -51,8 +51,8 @@ def hist_chart(dataframe, xaxis):
     fig = px.histogram(new_df, xaxis, height=300, title=xaxis)
     fig
 
-def hist2_chart(dataframe, xaxis):
-    fig = px.histogram(new_df, xaxis, height=300, title=xaxis)
+def pie_chart(dataframe, val):
+    fig = px.histogram(new_df, values=val, height=300)
     fig
     
     
@@ -101,7 +101,7 @@ if uploaded_file is not None:
     new_df["Tech_Golive"] = pd.to_datetime(new_df["Tech_Golive"], errors='coerce')
     new_df.sort_values(by=['Tech_Golive'], inplace=True, ascending=False)
     hist_chart(new_df, 'Tech_Golive')
-    hist2_chart(new_df, 'Tech_Golive')
+    pie_chart(new_df, 'Tech_Golive')
 
 #ACTION
 #    df.to_csv(s3_string+dt_string)
