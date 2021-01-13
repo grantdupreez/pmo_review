@@ -52,7 +52,7 @@ def hist_chart(dataframe, xaxis):
     fig
 
 def hist2_chart(dataframe, xaxis):
-    fig = px.histogram(new_df, xaxis, , marginal="rug", color=xaxis, height=300, title=xaxis)
+    fig = px.histogram(new_df, xaxis, marginal="rug", color=xaxis, height=300, title=xaxis)
     fig
     
     
