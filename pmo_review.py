@@ -94,7 +94,7 @@ if uploaded_file is not None:
     hist_chart(new_df, 'Status')
     hist_chart(new_df, 'Impacted_Countries')
     new_df["Tech_Golive"] = pd.to_datetime(new_df["Tech_Golive"])
-    new_df.sort_values(by=['Tech_Golive'], inplace=True, ascending=True)
+    new_df.sort_values(by=['Tech_Golive'], inplace=True, ascending=False, errors='coerce')
     hist_chart(new_df, 'Tech_Golive')
 
 #ACTION
