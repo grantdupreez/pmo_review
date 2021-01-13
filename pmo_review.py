@@ -50,11 +50,6 @@ def show_par_chart(dataframe):
 def hist_chart(dataframe, xaxis):
     fig = px.histogram(new_df, xaxis, height=300, title=xaxis)
     fig
-
-def pie_chart(dataframe, val):
-    fig = px.histogram(new_df, values=val, height=300)
-    fig
-    
     
 #set the plan logging
 from datetime import datetime
@@ -101,7 +96,9 @@ if uploaded_file is not None:
     new_df["Tech_Golive"] = pd.to_datetime(new_df["Tech_Golive"], errors='coerce')
     new_df.sort_values(by=['Tech_Golive'], inplace=True, ascending=False)
     hist_chart(new_df, 'Tech_Golive')
-    pie_chart(new_df, 'Tech_Golive')
+
+    fig = px.pie(new_df)
+    fig
 
 #ACTION
 #    df.to_csv(s3_string+dt_string)
